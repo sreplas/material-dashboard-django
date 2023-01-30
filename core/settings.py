@@ -18,7 +18,7 @@ SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 # load production server from .env
-ALLOWED_HOSTS = ['https://selcoscordsdeneme.azurewebsites.net']
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
 
 # Application definition
 
