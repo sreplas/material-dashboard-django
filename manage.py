@@ -20,7 +20,7 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-    is_prod = 'WEBSITE_HOSTNAME' in os.environ
+    is_prod = 'https://selcoscordsdeneme.azurewebsites.net' in os.environ
     if not is_prod:
         print("Loading environment variables from .env file")
         load_dotenv('./.env')
