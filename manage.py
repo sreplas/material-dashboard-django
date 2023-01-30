@@ -6,6 +6,8 @@ Copyright (c) 2019 - present AppSeed.us
 import os
 import sys
 
+from dotenv import load_dotenv
+
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
     try:
@@ -18,5 +20,10 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+    is_prod = 'WEBSITE_HOSTNAME' in os.environ
+    if not is_prod:
+        print("Loading environment variables from .env file")
+        load_dotenv('./.env')
+    
 if __name__ == '__main__':
     main()
